@@ -1,54 +1,92 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Sudeep Joseph Sirivella</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
-<style>
-  h1 {
-    text-align: center;
-    color: #990000;
-  }
-
-  body {
-    background-color: lightsalmon;
-    font-family: 'Arial';
-    color: #2b2b2b;
-    margin: 50;
-    padding: 50;
-  }
-</style>
-
+    <title>Sudeep Joseph Sirivella</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Sudeep Joseph Sirivella</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1 class="main-title">Sudeep Joseph Sirivella</h1>
+        </header>
 
-    
+        <main class="subtitle">
+            <h4>Welcome to Sudeep Joseph Sirivella's website</h4>
+        </main>
 
-    <main>
-        <p style="text-align:center">Welcome to <strong>Sudeep Joseph Sirivella</strong>'s website</p>
-    </main>
+        <nav class="navigation">
+            <button onclick="window.location.href='portfolio.html'" class="nav-button">
+                Portfolio
+            </button>
+            <button onclick="window.location.href='qualifications.html'" class="nav-button">
+                Qualifications
+            </button>
+            <button id="colorChangeBtn" class="nav-button-alt">
+                Change Background
+            </button>
+            <button onclick="window.location.href='service.html'" class="nav-button">
+                Service
+            </button>
+            <button onclick="window.location.href='genai.html'" class="nav-button">
+                AI Page
+            </button>
+        </nav>
 
-    <nav>
-        <ul>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="qualifications.html">Qualifications</a></li>
-            <li><a href="service.html">Service</a></li>
-            <li><a href="genai.html">AI Page</a></li>
-        </ul>
-    </nav>
+        <p class="body-text">This website is how I want to present myself professionally. Using the webpage links you can go ahead and see my various projects and qualifications. The AI page was generated using an AI prompt to show the capabailities of generative AI.</p>
 
-    <p>This website is how I want to present myself professionally. Using the webpage links you can go ahead and see my various projects and qualifications. The AI page was generated using an AI prompt to show the capabailities of generative AI.</p>
+        
+    </div>
 
-    <footer>
-        <p>CSCE 331 Project 1 - Iteration 1</p>
-    </footer>
+        <div class="projects-container">
 
-    <script src="script.js"></script>
+            <div class="project-card">
+                <img src="self-portrait.jpg" width="250" height="250">
+                <h2 class="project-title">Image of Sudeep Joseph Sirivella</h2>
+            </div>
+
+            <div class="project-card">
+                <h2 class="project-title">Who is this guy?</h2>
+                <p>Sudeep Joseph Sirivella is currently a junior computer engineering major at Texas A&M University. He is generally considered to be a chill guy at most times and in most circumstances. He is interested primarily in software development. He wants to succeed in CSCE 331 and hopes that the content and structure of this website is satisfactory enough.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>CSCE 331 Project 1 - Iteration 1</p>
+        </footer>
+
+    <script>
+      const colorChangeBtn = document.getElementById('colorChangeBtn');
+      const body = document.body;
+
+      const colors = ['orange', 'yellow'];
+      const colorHex = {
+          'orange': '#FFA500',
+          'yellow': '#FFFF00' 
+      };
+      
+      let currentColorName = localStorage.getItem('backgroundColorName') || colors[0];
+      let currentColorIndex = colors.indexOf(currentColorName);
+      
+      if (currentColorIndex === -1) {
+           currentColorIndex = 0;
+           currentColorName = colors[0];
+      }
+      
+      body.style.backgroundColor = colorHex[currentColorName];
+
+      colorChangeBtn.addEventListener('click', function() {
+          currentColorIndex = (currentColorIndex + 1) % colors.length;
+          const newColorName = colors[currentColorIndex];
+          
+          body.style.backgroundColor = colorHex[newColorName];
+          
+          localStorage.setItem('backgroundColorName', newColorName);
+      });
+    </script>
 
 </body>
 </html>
+

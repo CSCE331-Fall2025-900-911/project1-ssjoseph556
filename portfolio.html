@@ -1,59 +1,107 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Sudeep Joseph Sirivella</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-
-<style>
-  h1 {
-    text-align: center;
-    color: #990000;
-  }
-
-  body {
-    background-color: lightsalmon;
-    font-family: 'Arial';
-    color: #2b2b2b;
-    margin: 50;
-    padding: 50;
-  }
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudeep Joseph Sirivella - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Technical Portfolio</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1 class="main-title">Technical Portfolio</h1>
+        </header>
 
-    
+        <main class="subtitle">
+            <h4>Here are a few of my Technical Projects</h4>
+        </main>
 
-    <main>
-        <p style="text-align:center">Here is my <strong>Technical Portfolio</strong> as of now</p>
-    </main>
+        <nav class="navigation">
+            <button onclick="window.location.href='index.html'" class="nav-button">
+                Home
+            </button>
+            <button onclick="window.location.href='qualifications.html'" class="nav-button">
+                Qualifications
+            </button>
+            <button id="colorChangeBtn" class="nav-button-alt">
+                Change Background
+            </button>
+            <button onclick="window.location.href='service.html'" class="nav-button">
+                Service
+            </button>
+            <button onclick="window.location.href='genai.html'" class="nav-button">
+                AI Page
+            </button>
+        </nav>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="qualifications.html">Qualifications</a></li>
-            <li><a href="service.html">Service</a></li>
-            <li><a href="genai.html">AI Page</a></li>
-        </ul>
-    </nav>
+        <div class="projects-container">
+            <div class="project-card">
+                <h2 class="project-title">Predictive Maintenance Tool</h2>
+                <ul>
+                    <li>Developed a predictive maintenance tool for a new Anthem fueling product to identify and diagnose issues.</li>
+                    <li>Company launched the tool, saving thousands of dollars per fueling site by preventing unnecessary parts replacements.</li>
+                    <li>Recreated onsite issues in a lab and developed C# scripts to parse fueling logs for tool development.</li>
+                </ul>
+            </div>
+            <div class="project-card">
+                <h2 class="project-title">AI Coding Education Web App</h2>
+                <ul>
+                    <li>Developed both frontend and backend for a web application which leverages AI assistance to help users learn programming.</li>
+                    <li>Full-stack development with Next.js, FastAPI, AWS Amplify, AWS RDS, and DeepSeek API.</li>
+                    <li>Utilized Firebase for authentication and Cloudflare for cybersecurity.</li>
+                </ul>
+            </div>
 
-    <h2>Project 1</h2>
-    <p>This will be a description of one of my projects</p>
-    <h2>Project 2</h2>
-    <p>This will be a description of one of my projects</p>
-    <h2>Project 3</h2>
-    <p>This will be a description of one of my projects</p>
+            <div class="project-card">
+                <h2 class="project-title">Mobile App Memory Game</h2>
+                <ul>
+                    <li>Developed both frontend and backend for a mobile app to help users improve memory skills through multiple game modes.</li>
+                    <li>Used Swift in Xcode to develop the iOS version of the app.</li>
+                    <li>Used Kotlin and Java in Android Studio to develop the Android version of the app.</li>
+                </ul>
+            </div>
 
-    <footer>
-        <p>CSCE 331 Project 1 - Iteration 1</p>
-    </footer>
+        </div>
 
-    <script src="script.js"></script>
+        <footer>
+            <p>CSCE 331 Project 1 - Iteration 1</p>
+        </footer>
+    </div>
+
+    <script>
+      const colorChangeBtn = document.getElementById('colorChangeBtn');
+      const body = document.body;
+
+      const colors = ['orange', 'yellow'];
+      const colorHex = {
+          'orange': '#FFA500',
+          'yellow': '#FFFF00' 
+      };
+      
+      let currentColorName = localStorage.getItem('backgroundColorName') || colors[0];
+      let currentColorIndex = colors.indexOf(currentColorName);
+      
+      if (currentColorIndex === -1) {
+           currentColorIndex = 0;
+           currentColorName = colors[0];
+      }
+      
+      body.style.backgroundColor = colorHex[currentColorName];
+
+      colorChangeBtn.addEventListener('click', function() {
+          currentColorIndex = (currentColorIndex + 1) % colors.length;
+          const newColorName = colors[currentColorIndex];
+          
+          body.style.backgroundColor = colorHex[newColorName];
+          
+          localStorage.setItem('backgroundColorName', newColorName);
+      });
+    </script>
 
 </body>
 </html>
+
