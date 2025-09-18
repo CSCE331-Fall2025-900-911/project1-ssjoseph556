@@ -4,9 +4,9 @@
     <title>Sudeep Joseph Sirivella</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="styleOG.css">
 </head>
-<body>
+<body id="home-page">
 
     <div class="container">
         <header>
@@ -24,8 +24,8 @@
             <button onclick="window.location.href='qualifications.html'" class="nav-button">
                 Qualifications
             </button>
-            <button id="colorChangeBtn" class="nav-button-alt">
-                Change Background
+            <button id="changestlyebtn" class="toggle-button">
+                Change Style
             </button>
             <button onclick="window.location.href='service.html'" class="nav-button">
                 Service
@@ -34,58 +34,30 @@
                 AI Page
             </button>
         </nav>
-
-        <p class="body-text">This website is how I want to present myself professionally. Using the webpage links you can go ahead and see my various projects and qualifications. The AI page was generated using an AI prompt to show the capabailities of generative AI.</p>
-
         
     </div>
 
-        <div class="projects-container">
+    <div class="box-container">
 
-            <div class="project-card">
-                <img src="self-portrait.jpg" width="250" height="250">
-                <h2 class="project-title">Image of Sudeep Joseph Sirivella</h2>
+            <div class="box-card">
+                <h1 class="box-title">Who is this guy?</h1>
+                <p>Sudeep Joseph Sirivella is currently a Junior working on a Computer Engineering Major and Math Minor at Texas A&M University. He is generally considered to be a chill guy at most times and in most circumstances. He is interested primarily in software development and AI. He wants to succeed in CSCE 331 and hopes that the content and structure of this website is satisfactory enough.</p>
             </div>
 
-            <div class="project-card">
-                <h2 class="project-title">Who is this guy?</h2>
-                <p>Sudeep Joseph Sirivella is currently a junior computer engineering major at Texas A&M University. He is generally considered to be a chill guy at most times and in most circumstances. He is interested primarily in software development. He wants to succeed in CSCE 331 and hopes that the content and structure of this website is satisfactory enough.</p>
+            <div class="box-card">
+                <h1 class="box-title">What does he look like?</h1>
+                <img src="self-portrait.jpg" width="450" height="500">
             </div>
-        </div>
 
-        <footer>
-            <p>CSCE 331 Project 1 - Iteration 1</p>
-        </footer>
+            
+    </div>
 
-    <script>
-      const colorChangeBtn = document.getElementById('colorChangeBtn');
-      const body = document.body;
+    <footer>
+        <p>CSCE 331 Project 1 by Sudeep Joseph Sirivella</p>
+    </footer>
 
-      const colors = ['orange', 'yellow'];
-      const colorHex = {
-          'orange': '#FFA500',
-          'yellow': '#FFFF00' 
-      };
-      
-      let currentColorName = localStorage.getItem('backgroundColorName') || colors[0];
-      let currentColorIndex = colors.indexOf(currentColorName);
-      
-      if (currentColorIndex === -1) {
-           currentColorIndex = 0;
-           currentColorName = colors[0];
-      }
-      
-      body.style.backgroundColor = colorHex[currentColorName];
-
-      colorChangeBtn.addEventListener('click', function() {
-          currentColorIndex = (currentColorIndex + 1) % colors.length;
-          const newColorName = colors[currentColorIndex];
-          
-          body.style.backgroundColor = colorHex[newColorName];
-          
-          localStorage.setItem('backgroundColorName', newColorName);
-      });
-    </script>
+    <script src="script.js"></script>
+    
 
 </body>
 </html>

@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Service</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudeep Joseph Sirivella - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="styleOG.css">
 </head>
 <body>
 
@@ -21,86 +18,62 @@
         </main>
 
         <nav class="navigation">
-            <button onclick="window.location.href='index.html'" class="nav-button">
-                Home
+             <button onclick="window.location.href='portfolio.html'" class="nav-button">
+                Portfolio
             </button>
             <button onclick="window.location.href='qualifications.html'" class="nav-button">
                 Qualifications
             </button>
-            <button id="colorChangeBtn" class="nav-button-alt">
-                Change Background
+            <button id="changestlyebtn" class="toggle-button">
+                Change Style
             </button>
-            <button onclick="window.location.href='service.html'" class="nav-button">
-                Service
+            <button onclick="window.location.href='index.html'" class="nav-button">
+                Home
             </button>
             <button onclick="window.location.href='genai.html'" class="nav-button">
                 AI Page
             </button>
         </nav>
 
-        <div class="projects-container">
-            <div class="project-card">
-                <h2 class="project-title">TGFA Worship Team</h2>
+        <div class="box-container">
+            <div class="box-card2">
+                <h2 class="box-title">TGFA Worship Team</h2>
+                <img src="tgfa.jpg" width="250" height="250">
                 <ul>
                     <li>Serve on worship team of local congregation in Austin known as TGFA</li>
                     <li>Play piano, guitar, work on sound system on Sundays</li>
                     <li>Organize events and advertise them to local community</li>
                 </ul>
             </div>
-            <div class="project-card">
-                <h2 class="project-title">Kodaka Tutoring</h2>
+            <div class="box-card2">
+                <h2 class="box-title">Kodaka Tutoring</h2>
+                <img src="kodaka.png" width="400" height="325">
                 <ul>
                     <li>Offer free tutoring service with friends to high school students</li>
                     <li>Provide tutoring and help in math and science subjects</li>
                     <li>Helped around 30 students so far</li>
                 </ul>
             </div>
-
-            <div class="project-card">
-                <h2 class="project-title">FOB Exchange</h2>
+            <div class="box-card2">
+                <h2 class="box-title">FOB Exchange</h2>
+                <img src="fob.png" width="400" height="325">
                 <ul>
                     <li>Help FOBs in their transition from their Indian culture to American culture</li>
                     <li>Onboard FOBs into the American system and give them skills to succeed</li>
                     <li>Utilize personal experience to help others feel at home for free of charge</li>
                 </ul>
             </div>
+            
 
         </div>
 
         <footer>
-            <p>CSCE 331 Project 1 - Iteration 1</p>
+            <p>CSCE 331 Project 1 by Sudeep Joseph Sirivella</p>
         </footer>
+
+        <script src="script.js"></script>
     </div>
 
-    <script>
-      const colorChangeBtn = document.getElementById('colorChangeBtn');
-      const body = document.body;
-
-      const colors = ['orange', 'yellow'];
-      const colorHex = {
-          'orange': '#FFA500',
-          'yellow': '#FFFF00' 
-      };
-      
-      let currentColorName = localStorage.getItem('backgroundColorName') || colors[0];
-      let currentColorIndex = colors.indexOf(currentColorName);
-      
-      if (currentColorIndex === -1) {
-           currentColorIndex = 0;
-           currentColorName = colors[0];
-      }
-      
-      body.style.backgroundColor = colorHex[currentColorName];
-
-      colorChangeBtn.addEventListener('click', function() {
-          currentColorIndex = (currentColorIndex + 1) % colors.length;
-          const newColorName = colors[currentColorIndex];
-          
-          body.style.backgroundColor = colorHex[newColorName];
-          
-          localStorage.setItem('backgroundColorName', newColorName);
-      });
-    </script>
 
 </body>
 </html>

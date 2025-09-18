@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Portfolio</title>  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sudeep Joseph Sirivella - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="styleOG.css">
 </head>
-<body>
+<body id="portfolio-page">
 
     <div class="container">
         <header>
@@ -27,8 +24,8 @@
             <button onclick="window.location.href='qualifications.html'" class="nav-button">
                 Qualifications
             </button>
-            <button id="colorChangeBtn" class="nav-button-alt">
-                Change Background
+            <button id="changestlyebtn" class="toggle-button">
+                Change Style
             </button>
             <button onclick="window.location.href='service.html'" class="nav-button">
                 Service
@@ -38,69 +35,44 @@
             </button>
         </nav>
 
-        <div class="projects-container">
-            <div class="project-card">
-                <h2 class="project-title">Predictive Maintenance Tool</h2>
+        <div class="box-container">
+            <div class="box-card2">
+                <h2 class="box-title">Predictive Maintenance Tool</h2>
+                <img src="anthem.webp" width="400" height="325">
                 <ul>
                     <li>Developed a predictive maintenance tool for a new Anthem fueling product to identify and diagnose issues.</li>
                     <li>Company launched the tool, saving thousands of dollars per fueling site by preventing unnecessary parts replacements.</li>
                     <li>Recreated onsite issues in a lab and developed C# scripts to parse fueling logs for tool development.</li>
                 </ul>
             </div>
-            <div class="project-card">
-                <h2 class="project-title">AI Coding Education Web App</h2>
+            <div class="box-card2">
+                <h2 class="box-title">AI Coding Education Web App</h2>
+                <img src="codeapp.png" width="375" height="300">
                 <ul>
                     <li>Developed both frontend and backend for a web application which leverages AI assistance to help users learn programming.</li>
                     <li>Full-stack development with Next.js, FastAPI, AWS Amplify, AWS RDS, and DeepSeek API.</li>
                     <li>Utilized Firebase for authentication and Cloudflare for cybersecurity.</li>
                 </ul>
             </div>
-
-            <div class="project-card">
-                <h2 class="project-title">Mobile App Memory Game</h2>
+            <div class="box-card2">
+                <h2 class="box-title">Mobile App Memory Game</h2>
+                <img src="memapp.png" width="375" height="300">
                 <ul>
                     <li>Developed both frontend and backend for a mobile app to help users improve memory skills through multiple game modes.</li>
                     <li>Used Swift in Xcode to develop the iOS version of the app.</li>
                     <li>Used Kotlin and Java in Android Studio to develop the Android version of the app.</li>
                 </ul>
-            </div>
+        </div>
 
         </div>
 
         <footer>
-            <p>CSCE 331 Project 1 - Iteration 1</p>
+            <p>CSCE 331 Project 1 by Sudeep Joseph Sirivella</p>
         </footer>
+
+        <script src="script.js"></script>
     </div>
 
-    <script>
-      const colorChangeBtn = document.getElementById('colorChangeBtn');
-      const body = document.body;
-
-      const colors = ['orange', 'yellow'];
-      const colorHex = {
-          'orange': '#FFA500',
-          'yellow': '#FFFF00' 
-      };
-      
-      let currentColorName = localStorage.getItem('backgroundColorName') || colors[0];
-      let currentColorIndex = colors.indexOf(currentColorName);
-      
-      if (currentColorIndex === -1) {
-           currentColorIndex = 0;
-           currentColorName = colors[0];
-      }
-      
-      body.style.backgroundColor = colorHex[currentColorName];
-
-      colorChangeBtn.addEventListener('click', function() {
-          currentColorIndex = (currentColorIndex + 1) % colors.length;
-          const newColorName = colors[currentColorIndex];
-          
-          body.style.backgroundColor = colorHex[newColorName];
-          
-          localStorage.setItem('backgroundColorName', newColorName);
-      });
-    </script>
 
 </body>
 </html>
