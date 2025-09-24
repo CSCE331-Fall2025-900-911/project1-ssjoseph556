@@ -51,13 +51,13 @@ p {
     cursor: pointer;
     transition: background-color 0.3s ease;
 
-    /* --- Changes for circle shape --- */
+
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* This makes the shape circular */
-    padding: 0; /* Remove original padding */
+    border-radius: 50%; 
+    padding: 0; 
     
-    /* --- Flexbox to center text --- */
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,13 +75,13 @@ p {
     cursor: pointer;
     transition: background-color 0.3s ease;
 
-    /* --- Changes for circle shape --- */
+
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* This makes the shape circular */
-    padding: 0; /* Remove original padding */
+    border-radius: 50%; 
+    padding: 0; 
 
-    /* --- Flexbox to center text --- */
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,12 +106,12 @@ p {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
 
-    /* --- Changes for circle shape --- */
+
     width: 600px;
     height: 600px;
     border-radius: 50%;
     
-    /* --- Flexbox to help center the content --- */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -124,12 +124,11 @@ p {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s;
 
-    /* --- Changes for circle shape --- */
     width: 600px;
     height: 600px;
     border-radius: 50%;
     
-    /* --- Flexbox to help center the content --- */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
